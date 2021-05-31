@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg container-fluid">
+  <a class="navbar-brand">FabricMarket</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li routerLinkActive="active"><a class="nav-link" routerLink="product">Home<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button *ngIf="!getStatus()" class="btn btn-light" routerLink="connection" routerLinkActive="active"
+              type="submit">Connect
+      </button>
+      <button (click)="signOut()" *ngIf="getStatus()" class="btn btn-light" routerLink="product" routerLinkActive="active"
+              type="submit">Disconnect
+      </button>
+      <button *ngIf="isCartEmpty()" class="btn btn-light" routerLink="cart" routerLinkActive="active" type="button">
+        Cart
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+      <button *ngIf="!isCartEmpty()" class="btn btn-light" routerLink="cart" routerLinkActive="active" type="button">
+        Cart
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+
+      <!--      <app-cart-icon></app-cart-icon>-->
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,46 @@
+<div class="container-fluid" style="margin-top: 10%">
+  <div class="row">
+    <div class="col">
+      <img src="{{item.imagePath}}" width="100px">
+    </div>
+    <div class="col order-12">
+      <div class="row">
+        <p>{{item.productName}}</p>
+      </div>
+      <div class="row">
+        <p>{{item.productDescription}}</p>
+      </div>
+      <div class="row">
+        <p>{{item.name}}</p>
+      </div>
+      <div class="row">
+        <p>{{item.unitCost}}</p>
+      </div>
+      <div class="row">
+        <p>{{item.stock}}</p>
+      </div>
+      <div class="col-sm">
+        <input [(ngModel)]="qty" [defaultValue]="1" aria-label="1" class="form-control" type="text">
+        <a (click)="addToCart(item)" class="btn btn-primary form-control" href="#" style="margin-top: 2%">Add To
+          Cart</a>
+      </div>
+    </div>
+    <div class="col order-1">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

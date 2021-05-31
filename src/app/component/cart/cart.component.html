@@ -1,0 +1,81 @@
+<div class="container-fluid" style="margin-top: 10%; width: 200%">
+  <ul>
+    <div *ngFor="let item of itemCart " style="margin-top: 5%">
+      <table>
+        <thead>
+        <tr>
+          <td colspan="2" width="25%">
+            Articles
+          </td>
+          <td width="25%">
+            Quantité
+          </td>
+          <td width="25%">
+            Prix unitaire
+          </td>
+          <td width="25%">
+            Sous-total
+          </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <img [routerLink]="['../product/'+item.id]" alt="Card image cap" routerLinkActive="active" src="{{item.imagePath}}"
+                 width="100px">
+          </td>
+          <td style="align-self: center" width="25%">
+            <h2 class="card-title">{{item.name}}</h2>
+            <p class="card-subtitle">{{item.productDescription}}</p>
+          </td>
+          <td width="25%">
+            <div>
+              <h2 class="card-subtitle" style="font-size: 102%">{{item.qty}}</h2>
+            </div>
+          </td>
+          <td width="25%">
+            <div>
+              <p class="card-subtitle">{{item.unitCost}} $</p>
+            </div>
+          </td>
+          <td width="25%">
+            <div>
+              <p class="card-subtitle">{{item.unitCost * item.qty | number:'1.2-2'}} $ </p>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </ul>
+  <div *ngIf="itemCart.length > 0; else empty">
+    <table style="margin-top: 10%; background: antiquewhite">
+      <tr style="background: antiquewhite">
+        <td colspan="2">
+          <p>Connectez-vous pour profiter de vos avantages personnels</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+      </tr>
+      <tr style="background: antiquewhite">
+        <td>
+          <h5>Total pannier </h5>
+        </td>
+        <td>
+          <h5>{{totalCart | number:'1.2-2' }} </h5>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button (click)="isConnectedAndNotEmpty()" class="btn btn-danger btn-lg btn-block" routerLinkActive="active"
+                  type="button">VALIDER MON PANIER
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <ng-template #empty> Votre panier est vide, vous pouvez ajoutez des produits
+    <a [routerLink]="['../product']" routerLinkActive="active">ici</a></ng-template>
+</div>

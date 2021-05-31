@@ -1,0 +1,30 @@
+<div>
+  <div class="card-group" style="margin-top: 10%">
+    <!--  <h6>{{itemList}}</h6>-->
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of itemList " class="list-group-item list-group-item-action" style="margin-top: 5%">
+        <div class="card" style="width: 18rem;">
+          <img [routerLink]="[item.id]" class="card-img-top" height="200px" routerLinkActive="active" src="{{item.imagePath}}"
+               width="1000px">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.unitCost}} $</p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm">
+                  <p>quantity</p>
+                </div>
+                <div class="col-sm">
+                  <input [(ngModel)]="qty" [defaultValue]="1" aria-label="1" class="form-control" type="text">
+                  <a (click)="addToCart(item)" [routerLink]="[]" class="btn btn-primary form-control" href="#"
+                     style="margin-top: 2%">Add To Cart</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

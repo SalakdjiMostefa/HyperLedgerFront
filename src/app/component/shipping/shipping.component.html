@@ -1,0 +1,40 @@
+<div class="">
+
+</div>
+
+<div class="">
+  <div class="card-header">
+    Address de livraison
+  </div>
+  <div>
+    <form (ngSubmit)="onSubmitShippingAddressForm()" [formGroup]="shippingAddressForm" class="card-body">
+      <div class="form-group">
+        <label for="Address">Address</label>
+        <input class="form-control" formControlName="street1" id="Address" placeholder="1234 Main St" type="text">
+      </div>
+      <div class="form-group">
+        <label for="Address2">Address 2</label>
+        <input class="form-control" formControlName="street2" id="Address2" placeholder="Apartment, studio, or floor" type="text">
+      </div>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input class="form-control" formControlName="city" id="City" placeholder="City" type="text">
+      </div>
+      <div class="form-group">
+        <label for="State">State</label>
+        <input class="form-control" formControlName="state" id="State" placeholder="State" type="text">
+      </div>
+      <div class="form-group">
+        <label for="Zip">Zip</label>
+        <input class="form-control" formControlName="zipcode" id="Zip" placeholder="Zip" type="text">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger btn-lg btn-block" type="submit">Livrer a cette address
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-sm-2">
+
+</div>
