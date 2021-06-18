@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -19,7 +19,8 @@ import {CartService} from "./service/cart.service";
 import {NavbarService} from "./service/navbar.service";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { PaymentComponent } from './component/payment/payment.component';
-
+import { UserAreaComponent } from './component/user-area/user-area.component';
+import { LedgerComponent } from './component/ledger/ledger.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,8 @@ import { PaymentComponent } from './component/payment/payment.component';
     ConnectionComponent,
     ShippingComponent,
     PaymentComponent,
+    UserAreaComponent,
+    LedgerComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,11 @@ import { PaymentComponent } from './component/payment/payment.component';
     ProductService,
     UserService,
     CartService,
-    NavbarService
+    NavbarService,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ],
   bootstrap: [AppComponent],
 })

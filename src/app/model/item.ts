@@ -8,5 +8,4 @@ export interface Item {
   productDescription: string;
   stock: number;
   qty: number;
-
 }

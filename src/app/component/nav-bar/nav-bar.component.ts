@@ -35,4 +35,6 @@ export class NavBarComponent implements OnInit {
       return true;
     }
   }
+
+
 }

@@ -1,0 +1,28 @@
+<ul>
+
+  <li *ngFor="let order of orders">
+
+    <div class="card">
+      <ul>
+        <div class="card-body">
+          <img src="favicon.ico" width="100px">
+          <div class="card-img-top">
+            <ul>
+              <li *ngFor="let o of order.orderLines" class="jasmine-failure-list">
+                <div class="card-img-top">
+                  <label class="card-body">Product : </label>{{o.itemName}}
+                  <label class="card-body">Quantity: </label>{{o.quantity}}
+                  <label class="card-body">Prix Unitair : </label> {{o.unitCost}}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </ul>
+
+    </div>
+
+  </li>
+</ul>
+

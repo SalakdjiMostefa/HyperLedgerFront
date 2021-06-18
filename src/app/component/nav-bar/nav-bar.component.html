@@ -13,6 +13,9 @@
       <button (click)="signOut()" *ngIf="getStatus()" class="btn btn-light" routerLink="product" routerLinkActive="active"
               type="submit">Disconnect
       </button>
+      <button *ngIf="getStatus()" class="btn btn-light" routerLink="userArea" routerLinkActive="active" type="button">
+        <i class="fas fa-user"></i>
+      </button>
       <button *ngIf="isCartEmpty()" class="btn btn-light" routerLink="cart" routerLinkActive="active" type="button">
         Cart
         <i class="fa fa-shopping-cart"></i>
